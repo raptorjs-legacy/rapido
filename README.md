@@ -9,7 +9,7 @@ Source code for the Rapido command line automator
 # Usage
 
 ## Installing a new set of plugins from npm
-`rap install raptorjs`
+`rap install raptor`
 
 The above command will look for a npm module named `rapido-raptorjs` and install it as
 a plugin for the `rapido` cli. Internally, `rapido` will install the plugin using npm
