@@ -44,7 +44,7 @@ search in the current working directory. A Rápido module is indicated by the ex
 file in the root directory of the module.
 
 ### Switching Stacks
-The current stack can be switched using the `rap use` command as shown below:<br>
+The current stack can be switched using the `rap use` command as shown in the sample below:<br>
 `rap use raptorjs`
 
 It is also possible to enable multiple stacks:<br>
@@ -53,7 +53,7 @@ It is also possible to enable multiple stacks:<br>
 NOTE: If multiple stacks support the same command then you will be prompted to choose a stack when invoking
 the ambiguous command.
 
-NOTE: The currently enabled stack is stored in the `.rapido` configuration that is discovered first
+NOTE: The currently enabled stacks are stored in the `.rapido` configuration that is discovered first
 (see the "Configuration" section below). If a `.rapido` file is not found, one is created in
 the current directory.
 
