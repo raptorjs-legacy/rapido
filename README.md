@@ -68,9 +68,7 @@ Rápido, and all of the commands, can be configured using a simple JSON file for
 from multiple locations. Rapidio supports configuration overrides at the directory/project-level and
 at the user or system level using a simple configuration search path.
 
-A sample configuration is shown below:
-
-**.rapido config file:**
+**Sample .rapido config file:**
 ```javascript
 {
     "scaffold.component.dir": "scaffolds/component",
