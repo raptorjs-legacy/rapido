@@ -38,9 +38,10 @@ A new stack should be installed just like any other Node module using `npm`. For
 
 Stacks can also be installed globally using the `--global` switch for `npm` 
 (e.g. `npm install rapido-raptorjs --global`). When launched Rápido
-will search for stacks/and commands in all of the top-level modules found in any of the available 
+will search for stacks and commands in all of the first-level Rápido modules found in any of the available 
 `node_modules` directories. Rápido uses the same module search path that Node uses and will begin its
-search in the current working directory.
+search in the current working directory. A Rápido module is indicated by the existence of a `.rapido` configuration
+file in the root directory of the module.
 
 ### Switching Stacks
 The current stack can be switched using the `rap use` command as shown below:<br>
