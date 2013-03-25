@@ -106,25 +106,6 @@ Commands and stacks can easily be registered as part of the `.rapido` configurat
 The command handler and the command metadata (e.g. description) are defined inside the module file for the command as
 shown in the following sample code:
 ```javascript
-var File = require('raptor/files/File'),
-    files = require('raptor/files'),
-    path = require('path');
-
-function getComponentInfo(name) {
-    var lastSlash = name.lastIndexOf('/'),
-        shortName = lastSlash === -1 ? name : name.slice(lastSlash+1),
-        shortNameLower = shortName.toLowerCase(),
-        shortNameDashSeparated = shortName.replace(/([a-z])([A-Z])/g, function(match, a, b) {
-            return a + '-' + b;
-        }).toLowerCase();
-    return {
-        name: name,
-        shortName: shortName,
-        shortNameLower: shortNameLower,
-        shortNameDashSeparated: shortNameDashSeparated
-    };
-}
-
 module.exports = {
     description: "Description for my custom command",
 
