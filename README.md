@@ -84,7 +84,7 @@ A sample configuration is shown below:
 ```
 
 NOTE: Any configuration properties that have the suffix "file" or "dir" will result in a property value of type
-(raptor/file/File)[https://github.com/raptorjs/raptorjs/blob/master/lib/raptor/files/File_node.js] that
+[raptor/file/File](https://github.com/raptorjs/raptorjs/blob/master/lib/raptor/files/File_node.js) that
 references the file resolved relative to the directory containing the `.raptor` file.
 
 
