@@ -29,7 +29,7 @@ Details on creating your own commands are described in the "Creating Custom Comm
 
 ## Stack
 A stack is a collection of commands that are all related to a particular technology stack. Rápido supports
-using multiple stacks, and new stacks can easily be installed from `npm` using the `rapido` CLI as described below. 
+using multiple stacks, and new stacks can easily be installed using `npm`. 
 When running a command, the command is searched for in the stacks that are currently enabled.
 
 ### Installing Stacks
