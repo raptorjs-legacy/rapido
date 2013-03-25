@@ -14,13 +14,16 @@ global script using `npm` as shown below:
 
 ## Command
 Rapido is extensible and supports any number of commands that can easily be installed using `npm`.
-Based on the arguments based to the Rápido CLI, Rápido will delegate the work to a command. A simple
+Based on the arguments based to the Rápido CLI, Rápido will delegate the work to the appropriate command. A simple
 command invocation is shown below:
 `rap create component ui/buttons/Button --no-testing`
 
+In the above example, "create component" is the command name and "ui/buttons/Button" and "--no-testing" are additional
+arguments for the command.
+
 NOTE: Rápido uses `rap` for less typing.
 
-Details on creating your own commands are described below.
+Details on creating your own commands are described in the "Creating Custom Commands" section below.
 
 ## Stack
 A stack is a collection of commands that are all related to a particular technology stack. Rapido supports
@@ -67,6 +70,6 @@ A sample configuration is shown below:
     "app.rtld.file": "modules/taglibs/app/app.rtld"
 }
 ```
-
+# Creating Custom Commands
 
 
