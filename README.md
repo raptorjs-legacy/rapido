@@ -73,6 +73,22 @@ A sample configuration is shown below:
     "app.rtld.file": "modules/taglibs/app/app.rtld"
 }
 ```
+
+NOTE: Any configuration properties that have the suffix "file" or "dir" will result in a property value of type
+(raptor/file/File)[https://github.com/raptorjs/raptorjs/blob/master/lib/raptor/files/File_node.js] that
+references the file resolved relative to the directory containing the `.raptor` file.
+
+
 # Creating Custom Commands
 
+Commands can easily be registered as part of the `.rapido` configuration file as shown in the following sample code:
+```javascript
+{
+    "stack.raptorjs": {
+        "command.create component.file": "command-create-component.js",
+        "command.create page.file": "command-create-page.js",
+        "command.rename component.file": "command-rename-component.js"
+    }
+}
+```
 
