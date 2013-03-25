@@ -31,7 +31,7 @@ using multiple stacks, and new stacks can easily be installed from `npm` using t
 When running a command, the command is searched for in the stacks that are currently enabled.
 
 ### Installing Stacks
-A new stack should be installed using the `npm` command. For example:<br>
+A new stack should be installed just like any other Node module using `npm`. For example:<br>
 `npm install rapido-raptorjs`
 
 Stacks can also be installed globally using the `--global` switch for `npm` 
@@ -50,7 +50,7 @@ It is also possible to enable multiple stacks:<br>
 NOTE: If multiple stacks support the same command then you will be prompted to choose a stack when invoking
 the ambiguous command.
 
-The currently enabled stack is stored in the `.rapido` configuration that is discovered first
+NOTE: The currently enabled stack is stored in the `.rapido` configuration that is discovered first
 (see the "Configuration" section below). If a `.rapido` file is not found, one is created in
 the current directory.
 
@@ -60,7 +60,7 @@ To get a list of available commands and stacks, simple run the following command
 
 ## Configuration
 Rápido, and all of the commands, can be configured using a simple JSON file format that can be loaded
-from multiple locations. Rapidio supports configuration overrides at the directory/project-level and
+from multiple locations. Rápido supports configuration overrides at the directory/project-level and
 at the user or system level using a simple configuration search path.
 
 **Sample .rapido config file:**
@@ -78,7 +78,7 @@ at the user or system level using a simple configuration search path.
 
 NOTE: Any configuration properties that have the suffix "file" or "dir" will result in a property value of type
 [raptor/file/File](https://github.com/raptorjs/raptorjs/blob/master/lib/raptor/files/File_node.js) that
-references the file resolved relative to the directory containing the `.raptor` file that the
+references the file resolved relative to the directory containing the `.rapido` file that the
 configuration property is defined in.
 
 
