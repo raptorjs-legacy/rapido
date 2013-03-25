@@ -48,7 +48,7 @@ The current stack can be switched using the `rap use` command as shown in the sa
 `rap use raptorjs`
 
 It is also possible to enable multiple stacks:<br>
-`rap use raptorjs backbone`
+`rap use raptorjs jquery backbone`
 
 NOTE: If multiple stacks support the same command then you will be prompted to choose a stack when invoking
 the ambiguous command.
