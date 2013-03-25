@@ -6,15 +6,15 @@ Rápido is written in JavaScript and is built on top of Node.js and npm.
 
 # Installation
 
-The only prerequisite for rapido is Node. Rapido should be installed as a 
+The only prerequisite for Rápido is Node. Rápido should be installed as a 
 global script using `npm` as shown below:
 `npm install rapido --global`
 
 # Overview
 
 ## Command
-Rapido is extensible and supports any number of commands that can easily be installed using `npm`.
-Based on the arguments passed to the Rápido CLI, Rápido will delegate the work to the appropriate command. A simple
+Rápido is extensible and supports any number of commands that can easily be installed using `npm`.
+Based on the arguments passed to the Rápido CLI, Rápido will delegate the work to the appropriate command handler. A simple
 command invocation is shown below:
 `rap create component ui/buttons/Button --no-testing`
 
@@ -26,7 +26,7 @@ NOTE: Rápido uses `rap` for less typing.
 Details on creating your own commands are described in the "Creating Custom Commands" section below.
 
 ## Stack
-A stack is a collection of commands that are all related to a particular technology stack. Rapido supports
+A stack is a collection of commands that are all related to a particular technology stack. Rápido supports
 using multiple stacks, and new stacks can easily be installed from `npm` using the `rapido` CLI as described below. 
 
 ### Installing Stacks
@@ -54,8 +54,12 @@ It is also possible to enable multiple stacks:
 NOTE: If multiple stacks support the same command then you will be prompted to choose a stack when invoking
 the ambiguous command.
 
+## Available Commands and Stacks
+To get a list of available commands and stacks, simple run the following command:
+`rap list`
+
 ## Configuration
-Rapido, and all of the commands, can be configured using a simple JSON file format that can be loaded
+Rápido, and all of the commands, can be configured using a simple JSON file format that can be loaded
 from multiple locations. Rapidio supports configuration overrides at the directory/project-level and
 at the user or system level using a simple configuration search path.
 
