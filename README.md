@@ -39,7 +39,7 @@ Examples:
 * `rap install rapido-raptorjs`
 * `rap install rapido-raptorjs@0.1.0`
 * `rap install https://github.com/raptorjs/rapido-raptorjs/tarball/v0.1.0`
-* `rap install git+ssh://git@github.com:isaacs/npm.git#v1.0.27`
+* `rap install git+ssh://git@github.com:raptorjs/rapido-raptorjs.git#v0.1.0`
 
 NOTE: When installed, a stack will be installed into the `node_modules` directory that is nested
 within the directory containing the `rapido` module.
@@ -48,8 +48,11 @@ within the directory containing the `rapido` module.
 The current stack can be switched using the `rap use` command as shown below:
 `rap use raptorjs`
 
-It is also possible to enable multiple stacks (assuming there are no overlapping commands):
+It is also possible to enable multiple stacks:
 `rap use raptorjs backbone`
+
+NOTE: If multiple stacks support the same command then you will be prompted to choose a stack when invoking
+the ambiguous command.
 
 ## Configuration
 Rapido, and all of the commands, can be configured using a simple JSON file format that can be loaded
