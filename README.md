@@ -24,11 +24,13 @@ Details on creating your own commands are described below.
 
 ## Stack
 A stack is a collection of commands that are all related to a particular technology stack. Rapido supports
-using multiple stacks, and new stacks can easily be installed from `npm` using the `rapido` CLI. 
+using multiple stacks, and new stacks can easily be installed from `npm` using the `rapido` CLI as described below. 
 
 ### Installing Stacks
 A new stack can be installed using the following command:
-`rap install <stack>[@<version>]`
+`rap install <npm-module-ref>`
+
+`npm-module-ref` can be any allowed module reference supported by npm.
 
 Examples:
 * `rap install rapido-raptorjs`
