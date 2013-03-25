@@ -128,8 +128,11 @@ module.exports = {
      * @return {Object} The parsed command arguments (as name/value pairs) 
      */
     parseOptions: function(args) {
+        // You will typically parse and validate the args using
+        // a module such as optimist. See:
+        // https://github.com/substack/node-optimist
         return {
-            someOption: true,
+            someOption: args[0],
             // ...
         }
     },
