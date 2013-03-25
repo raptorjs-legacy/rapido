@@ -7,7 +7,7 @@ Rápido is written in JavaScript and is built on top of Node.js and npm.
 # Installation
 
 The only prerequisite for Rápido is Node. Rápido should be installed as a 
-global script using `npm` as shown below:
+global script using `npm` as shown below:<br>
 `npm install rapido --global`
 
 # Overview
@@ -15,7 +15,7 @@ global script using `npm` as shown below:
 ## Command
 Rápido is extensible and supports any number of commands that can easily be installed using `npm`.
 Based on the arguments passed to the Rápido CLI, Rápido will delegate the work to the appropriate command handler. A simple
-command invocation is shown below:
+command invocation is shown below:<br>
 `rap create component ui/buttons/Button --no-testing`
 
 In the above example, "create component" is the command name and "ui/buttons/Button" and "--no-testing" are additional
@@ -30,8 +30,7 @@ A stack is a collection of commands that are all related to a particular technol
 using multiple stacks, and new stacks can easily be installed from `npm` using the `rapido` CLI as described below. 
 
 ### Installing Stacks
-A new stack can be installed using the following command:
-
+A new stack can be installed using the following command:<br>
 `rap install <npm-module-ref>`
 
 `npm-module-ref` can be any allowed module reference supported by npm.
@@ -46,19 +45,17 @@ NOTE: When installed, a stack will be installed into the `node_modules` director
 within the directory containing the `rapido` module.
 
 ### Switching Stacks
-The current stack can be switched using the `rap use` command as shown below:
-
+The current stack can be switched using the `rap use` command as shown below:<br>
 `rap use raptorjs`
 
-It is also possible to enable multiple stacks:
-
+It is also possible to enable multiple stacks:<br>
 `rap use raptorjs backbone`
 
 NOTE: If multiple stacks support the same command then you will be prompted to choose a stack when invoking
 the ambiguous command.
 
 ## Available Commands and Stacks
-To get a list of available commands and stacks, simple run the following command:
+To get a list of available commands and stacks, simple run the following command:<br>
 `rap list`
 
 ## Configuration
@@ -86,12 +83,13 @@ NOTE: Any configuration properties that have the suffix "file" or "dir" will res
 references the file resolved relative to the directory containing the `.raptor` file.
 
 
-# Creating Custom Commands
+# Creating Custom Stacks and Commands
 
-Commands can easily be registered as part of the `.rapido` configuration file as shown in the following sample code:
+Commands and stacks can easily be registered as part of the `.rapido` configuration file as shown in the following sample code:
 ```javascript
 {
     "stack.raptorjs": {
+        "description": "Commands for the RaptorJS Toolkit",
         "command.create component.file": "command-create-component.js",
         "command.create page.file": "command-create-page.js",
         "command.rename component.file": "command-rename-component.js"
@@ -99,3 +97,53 @@ Commands can easily be registered as part of the `.rapido` configuration file as
 }
 ```
 
+The command handler and the command metadata (e.g. description) are defined inside the module file for the command as
+shown in the following sample code:
+```javascript
+var File = require('raptor/files/File'),
+    files = require('raptor/files'),
+    path = require('path');
+
+function getComponentInfo(name) {
+    var lastSlash = name.lastIndexOf('/'),
+        shortName = lastSlash === -1 ? name : name.slice(lastSlash+1),
+        shortNameLower = shortName.toLowerCase(),
+        shortNameDashSeparated = shortName.replace(/([a-z])([A-Z])/g, function(match, a, b) {
+            return a + '-' + b;
+        }).toLowerCase();
+    return {
+        name: name,
+        shortName: shortName,
+        shortNameLower: shortNameLower,
+        shortNameDashSeparated: shortNameDashSeparated
+    };
+}
+
+module.exports = {
+    description: "Description for my custom command",
+
+    /**
+     * @param args {Array<String>} An array of command arguments that must be 
+     *                             parsed (does not include the command).
+     * @return {Object} The parsed command arguments (as name/value pairs) 
+     */
+    parseOptions: function(args) {
+        return {
+            someOption: true,
+            // ...
+        }
+    },
+
+    /**
+     * @param options {Object} The parsed command options (returned by parseOptions)
+     * @param config {Object} The Rapido configuration loaded from .rapido config files
+     * @param rapido {Object} A reference to the rapido module
+     */
+    run: function(options, config, rapido) {
+        var someOption = options.someOption;
+        var someConfig = config.someConfig;
+        // ...
+        rapido.log.success('Command completed!');
+    }
+}
+```
