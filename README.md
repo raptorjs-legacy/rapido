@@ -14,7 +14,7 @@ global script using `npm` as shown below:
 
 ## Command
 Rapido is extensible and supports any number of commands that can easily be installed using `npm`.
-Based on the arguments based to the Rápido CLI, Rápido will delegate the work to the appropriate command. A simple
+Based on the arguments passed to the Rápido CLI, Rápido will delegate the work to the appropriate command. A simple
 command invocation is shown below:
 `rap create component ui/buttons/Button --no-testing`
 
