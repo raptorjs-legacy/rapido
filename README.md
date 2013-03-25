@@ -55,8 +55,12 @@ NOTE: The currently enabled stack is stored in the `.rapido` configuration that 
 the current directory.
 
 ## Available Commands and Stacks
-To get a list of available commands and stacks, simple run the following command:<br>
+To get a list of available commands for the currently enabled stacks, simple run the following command:<br>
 `rap list`
+
+To get a list of all commamnds for all stacks that have been installed (not just the ones that are enabled), the
+following command should be used:
+`rap list --all`
 
 ## Configuration
 Rápido, and all of the commands, can be configured using a simple JSON file format that can be loaded
