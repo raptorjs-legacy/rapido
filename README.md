@@ -70,7 +70,7 @@ at the user or system level using a simple configuration search path.
 
 A sample configuration is shown below:
 
-**.rapido**
+**.rapido config file:**
 ```javascript
 {
     "scaffold.component.dir": "scaffolds/component",
