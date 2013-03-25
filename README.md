@@ -19,7 +19,7 @@ command invocation is shown below:
 `rap create component ui/buttons/Button --no-testing`
 
 In the above example, "create component" is the command name and "ui/buttons/Button" and "--no-testing" are additional
-arguments for the command.
+arguments to the command handler.
 
 NOTE: Rápido uses `rap` for less typing.
 
