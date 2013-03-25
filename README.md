@@ -28,6 +28,7 @@ Details on creating your own commands are described in the "Creating Custom Comm
 ## Stack
 A stack is a collection of commands that are all related to a particular technology stack. Rápido supports
 using multiple stacks, and new stacks can easily be installed from `npm` using the `rapido` CLI as described below. 
+When running a command, the command is searched for in the stacks that are currently enabled.
 
 ### Installing Stacks
 A new stack can be installed using the following command:<br>
@@ -53,6 +54,10 @@ It is also possible to enable multiple stacks:<br>
 
 NOTE: If multiple stacks support the same command then you will be prompted to choose a stack when invoking
 the ambiguous command.
+
+The currently enabled stack is stored in the `.rapido` configuration that is discovered first
+(see the "Configuration" section below). If a `.rapido` file is not found, one is created in
+the current directory.
 
 ## Available Commands and Stacks
 To get a list of available commands and stacks, simple run the following command:<br>
