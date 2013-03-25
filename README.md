@@ -31,6 +31,7 @@ using multiple stacks, and new stacks can easily be installed from `npm` using t
 
 ### Installing Stacks
 A new stack can be installed using the following command:
+
 `rap install <npm-module-ref>`
 
 `npm-module-ref` can be any allowed module reference supported by npm.
@@ -46,9 +47,11 @@ within the directory containing the `rapido` module.
 
 ### Switching Stacks
 The current stack can be switched using the `rap use` command as shown below:
+
 `rap use raptorjs`
 
 It is also possible to enable multiple stacks:
+
 `rap use raptorjs backbone`
 
 NOTE: If multiple stacks support the same command then you will be prompted to choose a stack when invoking
