@@ -31,19 +31,14 @@ using multiple stacks, and new stacks can easily be installed from `npm` using t
 When running a command, the command is searched for in the stacks that are currently enabled.
 
 ### Installing Stacks
-A new stack can be installed using the following command:<br>
-`rap install <npm-module-ref>`
+A new stack should be installed using the `npm` command. For example:<br>
+`npm install rapido-raptorjs`
 
-`npm-module-ref` can be any allowed module reference supported by npm.
-
-Examples:
-* `rap install rapido-raptorjs`
-* `rap install rapido-raptorjs@0.1.0`
-* `rap install https://github.com/raptorjs/rapido-raptorjs/tarball/v0.1.0`
-* `rap install git+ssh://git@github.com:raptorjs/rapido-raptorjs.git#v0.1.0`
-
-NOTE: When installed, a stack will be installed into the `node_modules` directory that is nested
-within the directory containing the `rapido` module.
+Stacks can also be installed globally using the `--global` switch for `npm` 
+(e.g. `npm install rapido-raptorjs --global`). When launched Rápido
+will search for stacks/and commands in all of the top-level modules found in any of the available 
+`node_modules` directories. Rápido uses the same module search path that Node uses and will begin its
+search in the current working directory.
 
 ### Switching Stacks
 The current stack can be switched using the `rap use` command as shown below:<br>
