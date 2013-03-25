@@ -1,0 +1,26 @@
+{
+  "name": "rapido",
+  "version": "0.0.0",
+  "description": "Rápido is an extensible command line interface that enables rapid development for any technology stack. Rápido is written in JavaScript and is built on top of Node.js and npm.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/raptorjs/rapido.git"
+  },
+  "keywords": [
+    "rapid",
+    "cli",
+    "raptor",
+    "automation",
+    "commands",
+    "npm",
+    "development"
+  ],
+  "author": "Patrick Steele-Idem <psteeleidem@ebay.com>",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "bab50551545698fd5bc3bafab6011ff7d62fef3c"
+}
