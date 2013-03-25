@@ -85,7 +85,8 @@ A sample configuration is shown below:
 
 NOTE: Any configuration properties that have the suffix "file" or "dir" will result in a property value of type
 [raptor/file/File](https://github.com/raptorjs/raptorjs/blob/master/lib/raptor/files/File_node.js) that
-references the file resolved relative to the directory containing the `.raptor` file.
+references the file resolved relative to the directory containing the `.raptor` file that the
+configuration property is defined in.
 
 
 # Creating Custom Stacks and Commands
