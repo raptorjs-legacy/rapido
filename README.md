@@ -1,26 +1,46 @@
-rapido
+Rápido
 ======
 
-Source code for the rapido command line automator
+Rápido is an extensible command line interface that enables rapid development for any technology stack. 
+Rápido is written in JavaScript and is built on top of Node.js and npm.
 
 # Installation
 
 The only prerequisite for rapido is Node. Rapido should be installed as a 
-global script using npm using the following command:
+global script using `npm` as shown below:
 `npm install rapido --global`
 
 # Overview
 
 ## Command
 Rapido is extensible and supports any number of commands that can easily be installed using `npm`.
-Based on the arguments based to the rapido CLI, rapido will delegate the work to a command. A simple
+Based on the arguments based to the Rápido CLI, Rápido will delegate the work to a command. A simple
 command invocation is shown below:
 `rap create component ui/buttons/Button --no-testing`
 
+NOTE: Rápido uses `rap` for less typing.
+
+Details on creating your own commands are described below.
+
 ## Stack
 A stack is a collection of commands that are all related to a particular technology stack. Rapido supports
-using multiple stacks, and new stacks can easily be installed from `npm` using the `rapido` CLI. The
-current stack can be changed using the `rap use` command as shown below:
+using multiple stacks, and new stacks can easily be installed from `npm` using the `rapido` CLI. 
+
+### Installing Stacks
+A new stack can be installed using the following command:
+`rap install <stack>[@<version>]`
+
+Examples:
+* `rap install rapido-raptorjs`
+* `rap install rapido-raptorjs@0.1.0`
+* `rap install https://github.com/raptorjs/rapido-raptorjs/tarball/v0.1.0`
+* `rap install git+ssh://git@github.com:isaacs/npm.git#v1.0.27`
+
+NOTE: When installed, a stack will be installed into the `node_modules` directory that is nested
+within the directory containing the `rapido` module.
+
+### Switching Stacks
+The current stack can be switched using the `rap use` command as shown below:
 `rap use raptorjs`
 
 It is also possible to enable multiple stacks (assuming there are no overlapping commands):
@@ -45,19 +65,6 @@ A sample configuration is shown below:
     "app.rtld.file": "modules/taglibs/app/app.rtld"
 }
 ```
-
-
-# Usage
-
-## Installing a Stack
-`rap install raptor`
-
-
-
-The above command will look for a npm module named `rapido-raptorjs` and install it as
-a plugin for the `rapido` cli. Internally, `rapido` will install the plugin using npm
-and install it into a `node_modules` directory nested within the containing folder for 
-the `rapido` module.
 
 
 
