@@ -96,18 +96,25 @@ Commands and stacks can easily be registered as part of the `.rapido` configurat
 {
     "stack.raptorjs": {
         "description": "Commands for the RaptorJS Toolkit",
-        "command.create component.file": "command-create-component.js",
-        "command.create page.file": "command-create-page.js",
-        "command.rename component.file": "command-rename-component.js"
+        "command.create component": {
+            "description": "Create a RaptorJS UI component",
+            "file": "command-create-component.js"
+        },
+        "command.create page": {
+            "description": "Create a RaptorJS page",
+            "file": "command-create-page.js"
+        },
+        "command.rename component": {
+            "description": "Rename an existing UI component",
+            "file": "command-rename-component.js"
+        }
     }
 }
 ```
 
-The command handler and the command metadata (e.g. description) are defined inside the module file for the command as
-shown in the following sample code:
+The command handler should be implemented as CommonJS module as shown in the following sample code:
 ```javascript
 module.exports = {
-    description: "Description for my custom command",
 
     /**
      * @param args {Array<String>} An array of command arguments that must be 
