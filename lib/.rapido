@@ -3,6 +3,10 @@
         "description": "Creates a new rapido command",
         "file": "command-create-command.js"
     },
+    "command.create command alias": {
+        "description": "Creates a command alias",
+        "file": "command-create-command-alias.js"
+    },
     "command.create stack": {
         "description": "Creates a new rapido command stack",
         "file": "command-create-stack.js"
