@@ -2,9 +2,9 @@
   "name": "rapido",
   "version": "0.0.0",
   "description": "Rápido is an extensible command line interface that enables rapid development for any technology stack. Rápido is written in JavaScript and is built on top of Node.js and npm.",
-  "main": "index.js",
+  "main": "lib/rapido.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node_modules/.bin/mocha test/ --ignore-leaks"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,15 @@
   "author": "Patrick Steele-Idem <psteeleidem@ebay.com>",
   "license": "BSD",
   "readmeFilename": "README.md",
-  "gitHead": "bab50551545698fd5bc3bafab6011ff7d62fef3c"
+  "dependencies": {
+    "cli-color": "~0.2.2",
+    "raptor": "~2.3.3"
+  },
+  "devDependencies": {
+    "mocha": "~1.8.2",
+    "chai": "~1.5.0"
+  },
+  "bin": {
+    "rap": "bin/rap"
+  }
 }

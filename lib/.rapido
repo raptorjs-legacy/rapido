@@ -1,0 +1,6 @@
+{
+    "command.create command.file": "command-create-command.js",
+    "command.list.file": "command-list.js",
+    "command.install.file": "command-install.js",
+    "command.use.file": "command-use.js"
+}

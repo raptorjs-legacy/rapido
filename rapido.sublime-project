@@ -2,7 +2,27 @@
 	"folders":
 	[
 		{
-			"path": "/Users/psteeleidem/development/github/raptorjs/rapido"
+			"path": "."
 		}
-	]
+	],
+    "build_systems":
+    [
+        {
+            "cmd":
+            [
+                "node_modules/.bin/mocha",
+                "test/",
+                "--ignore-leaks"
+            ],
+            "name": "test",
+            "working_dir": "${project_path}"
+        }
+    ],
+    "settings":
+    {
+        "build_switcher_systems":
+        [
+            "test"
+        ]
+    }
 }
