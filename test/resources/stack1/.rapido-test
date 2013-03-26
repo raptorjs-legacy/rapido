@@ -1,0 +1,13 @@
+{
+    "stack.stack1": {
+        "description": "Description for stack1",
+        "command.stack1 command1": {
+            "description": "Description for stack1 command1",
+            "file": "stack1-command1.js"
+        },
+        "command.stack1 command2": {
+            "description": "Description for stack1 command2",
+            "file": "stack1-command2.js"
+        }
+    }
+}
