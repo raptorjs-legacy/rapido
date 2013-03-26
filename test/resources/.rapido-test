@@ -1,10 +1,10 @@
 {
-    "command.all command1": {
-        "description": "Description for all command1",
-        "file": "all-command1.js"
+    "command.command1": {
+        "description": "Description for command1",
+        "file": "command1.js"
     },
-    "command.all command2": {
-        "description": "Description for all command2",
-        "file": "all-command2.js"
+    "command.command2": {
+        "description": "Description for command2",
+        "file": "command2.js"
     }
 }
