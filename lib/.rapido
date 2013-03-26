@@ -12,8 +12,12 @@
         "file": "command-create-stack.js"
     },
     "command.list": {
-        "description": "Lists out available commands",
+        "description": "Lists out commands for enabled stacks",
         "file": "command-list.js"
+    },
+    "command.list all": {
+        "description": "Lists out all commands",
+        "file": "command-list-all.js"
     },
     "command.use": {
         "description": "Enables one ore more stacks",
