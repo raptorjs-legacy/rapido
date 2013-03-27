@@ -20,7 +20,7 @@
         "file": "command-list-all.js"
     },
     "command.use": {
-        "description": "Enables one ore more stacks",
+        "description": "Enables one or more stacks",
         "file": "command-use.js"
     }
 }
