@@ -16,7 +16,7 @@ $ npm install rapido --global
 
 # Overview
 
-## Command
+## Commands
 Rápido is extensible and supports any number of commands that can easily be installed using `npm`.
 Based on the arguments passed to the Rápido CLI, Rápido will delegate the work to the appropriate command handler. A simple
 command invocation is shown below:<br>
