@@ -184,8 +184,9 @@ module.exports = {
 }
 ```
 ## Command Line Argument Parsing
-A command should register allowed options using the `options` property of the exported
-command module as shown in the previous section.
+A command should declare which options it allows using the `options` property of the exported
+command module as shown in the previous section. In addition, the `usage` property should be
+used to provide basic information for the command.
 
 Internally, Rápido uses the [optimist](https://github.com/substack/node-optimist) module to
 parse the command line arguments using the option definitions. Please see the documentation for
