@@ -87,9 +87,8 @@ $ rap list all
 ```
 
 ## Configuration
-Rápido, and all of the commands, can be configured using a `rapido.json` file that can be loaded
-from multiple locations and merged together. Rápido supports configuration overrides at the directory/project-level and
-at the user or system level using a simple configuration search path.
+Rápido, and all of the commands, can be configured using `rapido.json` files that can be loaded
+from multiple locations.
 
 **Sample rapido.json config file:**
 ```javascript
@@ -108,6 +107,15 @@ NOTE: Any configuration properties that have the suffix "file" or "dir" will res
 [raptor/file/File](https://github.com/raptorjs/raptorjs/blob/master/lib/raptor/files/File_node.js) that
 references the file resolved relative to the directory containing the `rapido.json` file that the
 configuration property is defined in.
+
+
+Configuration files are merged together, and Rápido supports configuration 
+overrides at the directory/project-level and at the user or system level using a simple configuration search path.
+
+Rápido will look for a `rapido.json` file in the current working directory, and then search in the parent directory,
+all the way up to the root. It will then search in the home directory. Lastly, Rápido will search
+for `rapido.json` files in all of the `node_modules` directories using the same search
+path that Node uses to find and load modules (starting in the current working directory).
 
 # Creating a Stack
 Rápido provides commands for creating stacks and commands. To create a new stack simply do the following:
