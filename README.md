@@ -190,8 +190,8 @@ NOTE: Internally, Rápido uses the [optimist](https://github.com/substack/node-o
 parse the command line arguments using the option definitions.
 
 # Custom Command Line Tools using Rápido
-Don't like the name `rap`? No problem! Create your own command line tools using the power of 
-Rápido. Just add a Node bin script to project similar to the following:
+Don't like the name `rap` or what to create your own custom command line tool
+that utilizes the power or Rápido? No problem! Just add a Node bin script to project similar to the following:
 
 ```javascript
 #!/usr/bin/env node
@@ -217,11 +217,17 @@ can be installed globally:
 ```javascript
 {
  "bin": {
-    "raptor": "bin/raptor"
+    "raptor": "bin/raptor",
+    ...
   }
   ...
 }
 ```
+Your command line tool is ready to be installed:
+```
+npm install raptor --global
+```
+
 Now, when you launch your custom script, you will be shown something similar to the following:
 ![Screenshot](https://raw.github.com/raptorjs/rapido/master/screenshots/screenshot-custom-rapido-tool.png)
 
