@@ -31,7 +31,7 @@ NOTE: Rápido uses `rap` for less typing.
 
 Details on creating your own commands are described in the "Creating Custom Commands" section below.
 
-## Stack
+## Stacks
 A stack is a collection of commands that are all related to a particular technology stack. Rápido supports
 using multiple stacks, and new stacks can easily be installed using `npm`. 
 When running a command, the command is searched for in the stacks that are currently enabled.
