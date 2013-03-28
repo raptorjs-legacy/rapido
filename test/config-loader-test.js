@@ -11,7 +11,7 @@ describe('config-loader', function(){
                 path.join(__dirname, 'resources/stack2'),
             ];
 
-            rapido.load(paths, '.rapido-test');
+            rapido.load(paths, 'rapido-test.json');
             console.log('\n' + rapido.commands.toString());
 
             var stacks = rapido.commands.getStacks();
