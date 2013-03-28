@@ -22,9 +22,10 @@ $ npm install rapido --global
 # Overview
 
 ## Commands
-Rápido is extensible and supports any number of commands that can easily be installed using `npm`.
-Based on the arguments passed to the Rápido CLI, Rápido will delegate the work to the appropriate command handler. A simple
-command invocation is shown below:<br>
+Rápido is extensible and supports any number of commands that can easily be invoked from the command line.
+Commands are bundled as part of "stacks" and new stacks can easily be installed using `npm` (described later).
+Based on the arguments passed to the Rápido command line interface, Rápido will delegate the work to the 
+appropriate command handler. A simple command invocation is shown below:<br>
 ```
 $ rap create component ui/buttons/Button --no-testing
 ```
