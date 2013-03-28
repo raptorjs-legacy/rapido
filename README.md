@@ -63,7 +63,7 @@ To get a list of available commands for the currently enabled stacks, simple run
 
 To get a list of all commamnds for all stacks that have been installed (not just the ones that are enabled), the
 following command should be used:
-`rap list --all`
+`rap list all`
 
 ## Configuration
 Rápido, and all of the commands, can be configured using a simple JSON file format that can be loaded
@@ -89,9 +89,17 @@ references the file resolved relative to the directory containing the `rapido.js
 configuration property is defined in.
 
 
-# Creating Custom Stacks and Commands
-
-Commands and stacks can easily be registered as part of the `rapido.json` configuration file as shown in the following sample code:
+# Creating Stacks and Commands
+## Creating a Stack
+Rápido provides commands for creating stacks and commands(!). To create a new stack simply do the following:
+```
+$ mkdir my-stack
+$ cd my-stack
+$ rap create stack
+```
+You will be prompted for information about the new stack, and the command then will generate all of the files
+for your stack in the current directory. Stacks are defined in a `rapido.json` file as shown in the following
+sample code:
 ```javascript
 {
     "stack.raptorjs": {
@@ -112,35 +120,47 @@ Commands and stacks can easily be registered as part of the `rapido.json` config
 }
 ```
 
-The command handler should be implemented as CommonJS module as shown in the following sample code:
+You can then share your stack by publishing it to the npm repository by simply running `npm publish`.
+
+## Creating a Command
+New commands can be added to a stack using the `rap create command`. You will be prompted for
+some information about the command, and then the command implementation will be created
+and automatically registered in the stack by updating the `rapido.json` for the stack.
+
+A command handler is implemented as a CommonJS module as shown in the following sample code:
 ```javascript
 module.exports = {
+    usage: 'Usage: $0 say hello <name>',
 
-    /**
-     * @param args {Array<String>} An array of command arguments that must be 
-     *                             parsed (does not include the command).
-     * @return {Object} The parsed command arguments (as name/value pairs) 
-     */
-    parseOptions: function(args) {
-        // You will typically parse and validate the args using
-        // a module such as optimist. See:
-        // https://github.com/substack/node-optimist
-        return {
-            someOption: args[0],
-            // ...
+    options: {
+        'upper-case': {
+            describe: 'Convert name to upper case'
         }
     },
 
-    /**
-     * @param options {Object} The parsed command options (returned by parseOptions)
-     * @param config {Object} The Rapido configuration loaded from rapido.json config files
-     * @param rapido {Object} A reference to the rapido module
-     */
-    run: function(options, config, rapido) {
-        var someOption = options.someOption;
-        var someConfig = config.someConfig;
-        // ...
-        rapido.log.success('Command completed!');
+    validate: function(args, rapido) {
+        var name = args._[0];
+        if (!name) {
+            throw 'name is required';
+        }
+        
+        return {
+            name: name,
+            upperCase: args['upper-case']
+        };
+    },
+
+    run: function(args, config, rapido) {
+        var name = args.name;
+
+        if (args.upperCase) {
+            name = name.toUpperCase();
+        }
+
+        rapido.log.success('Command says: ' + name);
     }
 }
 ```
+
+NOTE: Internally, Rápido uses the [optimist](https://github.com/substack/node-optimist) module to
+parse the command line arguments using the option definitions.
