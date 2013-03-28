@@ -27,7 +27,9 @@
     "raptor": "~2.3.3",
     "optimist": "~0.3.5",
     "prompt": "~0.2.9",
-    "dustjs-linkedin": "~1.2.1"
+    "dustjs-linkedin": "~1.2.1",
+    "npm": "~1.2.15",
+    "colors": "~0.6.0-1"
   },
   "devDependencies": {
     "mocha": "~1.8.2",
