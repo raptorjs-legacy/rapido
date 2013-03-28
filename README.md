@@ -219,3 +219,7 @@ can be installed globally:
   ...
 }
 ```
+Now, when you launch your custom script, you will be shown something similar to the following:
+![Screenshot](https://raw.github.com/raptorjs/rapido/master/screenshots/screenshot-custom-rapido-tool.png)
+
+
