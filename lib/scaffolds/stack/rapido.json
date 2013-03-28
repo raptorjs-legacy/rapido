@@ -1,9 +1,13 @@
 {
-    "stack.{name}": {
-        "description": "{description}",
-        "command.say hello": {
-            "description": "Say hello!",
-            "file": "commands/say-hello.js"
+    "stacks": {
+        "{name}": {
+            "description": "{description}",
+            "commands": {
+                "say hello": {
+                    "description": "Say hello!",
+                    "file": "commands/say-hello.js"
+                }
+            } 
         }
     }
 }
