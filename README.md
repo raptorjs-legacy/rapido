@@ -57,7 +57,7 @@ NOTE: The currently enabled stacks are stored in the `rapido.json` configuration
 (see the "Configuration" section below). If a `rapido.json` file is not found, one is created in
 the current directory.
 
-## Available Commands and Stacks
+### Listing Commands and Stacks
 To get a list of available commands for the currently enabled stacks, simple run the following command:<br>
 `rap list`
 
