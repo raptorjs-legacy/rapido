@@ -10,7 +10,7 @@ Rápido is written in JavaScript and is built on top of Node.js and npm.
 
 The only prerequisite for Rápido is Node. Rápido should be installed as a 
 global script using `npm` as shown below:<br>
-`npm install rapido --global`
+`$ npm install rapido --global`
 
 # Overview
 
@@ -18,7 +18,7 @@ global script using `npm` as shown below:<br>
 Rápido is extensible and supports any number of commands that can easily be installed using `npm`.
 Based on the arguments passed to the Rápido CLI, Rápido will delegate the work to the appropriate command handler. A simple
 command invocation is shown below:<br>
-`rap create component ui/buttons/Button --no-testing`
+`$ rap create component ui/buttons/Button --no-testing`
 
 In the above example, `"create component"` is the command name and `"ui/buttons/Button"` and `"--no-testing"` are additional
 arguments to the command handler.
@@ -34,23 +34,24 @@ When running a command, the command is searched for in the stacks that are curre
 
 ### Installing Stacks
 A new stack should be installed just like any other Node module using `npm`. For example:<br>
-`npm install rapido-raptorjs`
+`$ npm install rapido-raptorjs`
 
 Stacks can also be installed globally using the `--global` switch for `npm` 
 (e.g. `npm install rapido-raptorjs --global`). When launched Rápido
-will search for stacks and commands in all of the first-level Rápido modules found in any of the available 
+will search for Rápido stacks and commands in all of the first-level Node modules found in any of the available 
 `node_modules` directories. Rápido uses the same module search path that Node uses and will begin its
-search in the current working directory. A Rápido module is indicated by the existence of a `rapido.json` configuration
+search in the current working directory and ending in the global `node_modules` direcotry.
+A Rápido stack is indicated by the existence of a `rapido.json` configuration
 file in the root directory of the module.
 
-### Switching Stacks
-The current stack can be switched using the `rap use` command as shown in the sample below:<br>
-`rap use raptorjs`
+### Enabling Stacks
+Stacks can be enabled and disabled using the `rap use` command as shown in the sample below:<br>
+`$ rap use raptorjs`
 
 It is also possible to enable multiple stacks:<br>
-`rap use raptorjs jquery backbone`
+`$ rap use raptorjs jquery backbone`
 
-NOTE: If multiple stacks support the same command then you will be prompted to choose a stack when invoking
+NOTE: If multiple enabled stacks support the same command then you will be prompted to choose a stack when invoking
 the ambiguous command.
 
 NOTE: The currently enabled stacks are stored in the `rapido.json` configuration that is discovered first
@@ -59,11 +60,11 @@ the current directory.
 
 ### Listing Commands and Stacks
 To get a list of available commands for the currently enabled stacks, simple run the following command:<br>
-`rap list`
+`$ rap list`
 
 To get a list of all commamnds for all stacks that have been installed (not just the ones that are enabled), the
 following command should be used:
-`rap list all`
+`$ rap list all`
 
 ## Configuration
 Rápido, and all of the commands, can be configured using a `rapido.json` file that can be loaded
@@ -91,7 +92,7 @@ configuration property is defined in.
 
 # Creating Stacks and Commands
 ## Creating a Stack
-Rápido provides commands for creating stacks and commands(!). To create a new stack simply do the following:
+Rápido provides commands for creating stacks and commands. To create a new stack simply do the following:
 ```
 $ mkdir my-stack
 $ cd my-stack
