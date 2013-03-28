@@ -1,26 +1,29 @@
 {
+    "scaffold.command.dir": "scaffolds/command",
+    "scaffold.stack.dir": "scaffolds/stack",
+
     "command.create command": {
         "description": "Creates a new rapido command",
-        "file": "command-create-command.js"
+        "file": "commands/command-create-command.js"
     },
     "command.create command alias": {
         "description": "Creates a command alias",
-        "file": "command-create-command-alias.js"
+        "file": "commands/command-create-command-alias.js"
     },
     "command.create stack": {
         "description": "Creates a new rapido command stack",
-        "file": "command-create-stack.js"
+        "file": "commands/command-create-stack.js"
     },
     "command.list": {
         "description": "Lists out commands for enabled stacks",
-        "file": "command-list.js"
+        "file": "commands/command-list.js"
     },
     "command.list all": {
         "description": "Lists out all commands",
-        "file": "command-list-all.js"
+        "file": "commands/command-list-all.js"
     },
     "command.use": {
-        "description": "Enables one or more stacks",
-        "file": "command-use.js"
+        "description": "Enables and disables stacks",
+        "file": "commands/command-use.js"
     }
 }
