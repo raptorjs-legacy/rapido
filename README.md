@@ -108,9 +108,7 @@ NOTE: Any configuration properties that have the suffix "file" or "dir" will res
 references the file resolved relative to the directory containing the `rapido.json` file that the
 configuration property is defined in.
 
-
-# Creating Stacks and Commands
-## Creating a Stack
+# Creating a Stack
 Rápido provides commands for creating stacks and commands. To create a new stack simply do the following:
 ```
 $ mkdir my-stack
@@ -146,7 +144,7 @@ sample code:
 
 You can then share your stack by publishing it to the npm repository by simply running `npm publish`.
 
-## Creating a Command
+# Creating a Command
 New commands can be added to a stack using the `rap create command`. You will be prompted for
 some information about the command, and then the command implementation will be created
 and automatically registered in the stack by updating the `rapido.json` for the stack.
