@@ -66,7 +66,7 @@ following command should be used:
 `rap list all`
 
 ## Configuration
-Rápido, and all of the commands, can be configured using a simple JSON file format that can be loaded
+Rápido, and all of the commands, can be configured using a `rapido.json` file format that can be loaded
 from multiple locations. Rápido supports configuration overrides at the directory/project-level and
 at the user or system level using a simple configuration search path.
 
