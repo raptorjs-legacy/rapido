@@ -102,20 +102,24 @@ for your stack in the current directory. Stacks are defined in a `rapido.json` f
 sample code:
 ```javascript
 {
-    "stack.raptorjs": {
-        "description": "Commands for the RaptorJS Toolkit",
-        "command.create component": {
-            "description": "Create a RaptorJS UI component",
-            "file": "command-create-component.js"
-        },
-        "command.create page": {
-            "description": "Create a RaptorJS page",
-            "file": "command-create-page.js"
-        },
-        "command.rename component": {
-            "description": "Rename an existing UI component",
-            "file": "command-rename-component.js"
-        }
+    "stacks": {
+        "raptorjs": {
+            "description": "Commands for the RaptorJS Toolkit",
+            "commands": {
+                "create component": {
+                    "description": "Create a RaptorJS UI component",
+                    "file": "command-create-component.js"
+                },
+                "create page": {
+                    "description": "Create a RaptorJS page",
+                    "file": "command-create-page.js"
+                },
+                "rename component": {
+                    "description": "Rename an existing UI component",
+                    "file": "command-rename-component.js"
+                }
+            }
+        } 
     }
 }
 ```
