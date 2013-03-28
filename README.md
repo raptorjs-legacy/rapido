@@ -192,6 +192,22 @@ Internally, Rápido uses the [optimist](https://github.com/substack/node-optimis
 parse the command line arguments using the option definitions. Please see the documentation for
 the `optimist` module on the format for defining options.
 
+## Reading Configuration Properties
+The loaded configuration is passed as the second argument to the `run` method exported by
+a command. Configuration properties can easily be read as shown in the following sample code:
+```javascript
+module.exports = {
+    ...
+    run: function(args, config, rapido) {
+        var scaffoldDir = config["scaffold.page.dir"];
+        if (!scaffoldDir) {
+            throw new Error('"scaffold.page.dir" not defined in "' + rapido.configFilename + '" config file');
+        }
+        ...
+    }
+}
+````
+
 ## Scaffolding
 Rápido provides support for scaffolding which allows for commands to generate a set of files
 from a template directory. Rápido uses [dust-linkedin](http://linkedin.github.com/dustjs/) to
