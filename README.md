@@ -185,9 +185,85 @@ module.exports = {
     }
 }
 ```
+## Command Line Argument Parsing
+A command should register allowed options using the `options` property of the exported
+command module as shown in the previous section.
 
-NOTE: Internally, Rápido uses the [optimist](https://github.com/substack/node-optimist) module to
-parse the command line arguments using the option definitions.
+Internally, Rápido uses the [optimist](https://github.com/substack/node-optimist) module to
+parse the command line arguments using the option definitions. Please see the documentation for
+the `optimist` module on the format for defining options.
+
+## Scaffolding
+Rápido provides support for scaffolding which allows for commands to generate a set of files
+from a template directory. Rápido uses [dust-linkedin](http://linkedin.github.com/dustjs/) to
+support variables, conditionals and other structural logic inside template files. In addition,
+variables are supported in filenames using `_<var-name>_` syntax. If a variable inside a filename
+resolves to a `false` value then the file will be ignored, thus allowing for conditional files.
+
+The generation of files using a scaffold can be done as shown in the following sample code:
+```javascript
+rapido.scaffold({
+    scaffoldDir: scaffoldDir, // Location of the input scaffold directory
+    outputDir: outputDir,     // Output directory
+    overwrite: true,          // Files will only be overwritten if true
+    data: {                   // Input data for the templates
+        name: 'Frank',
+        count: 30
+    },
+    beforeFile: function(outputFile, content) { // Invoked before writing a file
+        return true; // If false is returned then the file will not be written
+    },
+    afterFile: function(outputFile) { // Invoked after writing a file
+        
+    }
+});
+```
+
+## User Input
+Rápido makes it easy to accept user input from the command line using the [prompt](https://github.com/flatiron/prompt)
+module for Node as shown in the following sample code:
+```javascript
+var prompt = rapido.prompt;
+prompt.start();
+prompt.get(
+    {
+        properties: {
+            'name': {
+                description: 'Name',
+                required: false
+            },
+            'count': {
+                description: 'Count',
+                required: false
+            },
+        }       
+    }
+    , 
+    function (err, result) {
+        if (err) { 
+            rapido.log.error(err);
+            return;
+        }
+        
+        var name = result.name || 'Default';
+        var count = result.count || 0;
+        //...
+    });
+```
+
+## Colorized Output
+The following commands should be used to produce colorized output:
+```javascript
+rapido.log.success('Completed successfully');
+rapido.log.success('success', 'Completed successfully'); // With label: [success] Completed successfully!
+rapido.log.info('Some info message');
+rapido.log.info('info', 'Some info message'); // With label: [info] Some info message
+rapido.log.warn('Some warning message');
+rapido.log.warn('warn', 'Some warning message'); // With label: [warn] Some warning message
+rapido.log.error('Some error message');
+rapido.log.error('error', 'Some error message'); // With label: [error] Some warning message
+rapido.log('Message with no color');
+```
 
 # Custom Command Line Tools using Rápido
 Don't like the name `rap` or what to create your own custom command line tool
