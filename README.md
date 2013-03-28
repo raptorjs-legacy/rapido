@@ -183,3 +183,37 @@ module.exports = {
 
 NOTE: Internally, Rápido uses the [optimist](https://github.com/substack/node-optimist) module to
 parse the command line arguments using the option definitions.
+
+# Custom Command Line Tools using Rápido
+Don't like the name `rap`? No problem! Create your own command line tools using the power of 
+Rápido. Just add a Node bin script to project similar to the following:
+
+```javascript
+#!/usr/bin/env node
+var path = require('path');
+var rapido = require('rapido').create();
+
+// Give your command line tool a name:
+rapido.title = 'RaptorJS Command Line Tools';
+
+// Does your project have its own Rápido that were installed from npm?
+// If so, you'll need to tell Rápido where to find them:
+rapido.addNodeModulesDir(path.join(__dirname, '../node_modules'));
+
+// Enable any stacks you need for your Command Line Tool
+rapido.enableStack('raptorjs');
+
+// Now run Rápido and let it take care of the rest!
+rapido.run(process.argv);
+```
+
+You'll then want to register your script in the `package.json` file for your Node module so that it
+can be installed globally:
+```javascript
+{
+ "bin": {
+    "raptor": "bin/raptor"
+  }
+  ...
+}
+```
