@@ -3,7 +3,10 @@ _Design In-Progress. Feedback and Contributions Welcome_
 Rápido
 ======
 Rápido is an extensible command line interface that enables rapid development for any technology stack. 
-Rápido is written in JavaScript and is built on top of Node.js and npm.
+Rápido is written in JavaScript and is built on top of Node.js and npm. 
+
+Rápido provides support for scaffolding, command line argument parsing, 
+configuration loading, accepting user input and producing colorized output.
 
 ![Screenshot](https://raw.github.com/raptorjs/rapido/master/screenshots/screenshot.png)
 
@@ -219,3 +222,7 @@ can be installed globally:
   ...
 }
 ```
+Now, when you launch your custom script, you will be shown something similar to the following:
+![Screenshot](https://raw.github.com/raptorjs/rapido/master/screenshots/screenshot-custom-rapido-tool.png)
+
+
