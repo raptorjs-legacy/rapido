@@ -1,0 +1,9 @@
+{
+    "stack.{name}": {
+        "description": "{description}",
+        "command.say hello": {
+            "description": "Say hello!",
+            "file": "commands/say-hello.js"
+        }
+    }
+}

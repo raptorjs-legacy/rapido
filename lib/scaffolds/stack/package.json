@@ -1,0 +1,10 @@
+{
+  "name": "rapido-{name}",
+  "version": "0.1.0",
+  "description": "Rapido stack: {description}",
+  "keywords": [
+    "rapido",
+    "{name}"
+  ],
+  "readmeFilename": "README.md"
+}
