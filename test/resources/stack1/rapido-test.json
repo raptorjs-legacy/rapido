@@ -1,0 +1,21 @@
+{
+    "test2.file": "stack1.json",
+    "test.stack1.file": "test.stack1.json",
+    "stacks": {
+        "stack1": {
+            "description": "Description for stack1",
+
+            "commands": {
+                "stack1 command1": {
+                    "description": "Description for stack1 command1",
+                    "file": "stack1-command1.js"
+                },
+                "stack1 command2": {
+                    "description": "Description for stack1 command2",
+                    "file": "stack1-command2.js"
+                }
+            }
+        }
+        
+    }
+}

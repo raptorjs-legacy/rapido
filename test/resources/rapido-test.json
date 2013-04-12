@@ -1,10 +1,15 @@
 {
-    "command.command1": {
-        "description": "Description for command1",
-        "file": "command1.js"
-    },
-    "command.command2": {
-        "description": "Description for command2",
-        "file": "command2.js"
+    "test1.file": "test1.json",
+    "test2.file": "default.json",
+    "test.dir": "stack1",
+    "commands": {
+        "command1": {
+            "description": "Description for command1",
+            "file": "command1.js"
+        },
+        "command2": {
+            "description": "Description for command2",
+            "file": "command2.js"
+        }
     }
 }

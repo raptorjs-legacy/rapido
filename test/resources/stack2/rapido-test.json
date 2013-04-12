@@ -1,0 +1,17 @@
+{
+    "stacks": {
+        "stack2": {
+            "description": "Description for stack2",
+            "commands": {
+                "stack2 command1": {
+                    "description": "Description for stack2 command1",
+                    "file": "stack2-command1.js"
+                },
+                "stack2 command2": {
+                    "description": "Description for stack2 command2",
+                    "file": "stack2-command2.js"
+                }
+            }    
+        }
+    }
+}

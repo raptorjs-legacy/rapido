@@ -1,9 +1,14 @@
-var should = require('chai').should(),
+var chai = require('chai');
+
+var should = chai.should(),
     path = require('path');
+
+
+chai.Assertion.includeStack = true; // defaults to false
 
 describe('config-loader', function(){
     describe('#loadConfig()', function(){
-        it('should register all commands', function(){
+        xit('should register all commands', function(){
             var rapido = require('../lib/rapido').create();
             var paths = [
                 path.join(__dirname, 'resources'),
@@ -45,6 +50,27 @@ describe('config-loader', function(){
             stacks[2].getCommands()[1].name.should.equal("stack2 command2");
             stacks[2].getCommands()[1].description.should.equal("Description for stack2 command2");
             stacks[2].getCommands()[1].file.getAbsolutePath().should.equal(path.join(__dirname, 'resources/stack2/stack2-command2.js'));
+            
+        })
+
+        it('should resolve file properties', function(){
+            var rapido = require('../lib/rapido').create();
+            var paths = [
+                path.join(__dirname, 'resources'),
+                path.join(__dirname, 'resources/stack1'),
+                path.join(__dirname, 'resources/stack2'),
+            ];
+
+            rapido.load(paths, 'rapido-test.json');
+            // console.error(rapido.config);
+
+            rapido.config['test1.file'].getAbsolutePath().should.equal(path.join(__dirname, 'resources/test1.json'))
+            rapido.config['test.dir'].getAbsolutePath().should.equal(path.join(__dirname, 'resources/stack1'))
+            rapido.config.getUnresolvedProperty('test1.file').should.equal('test1.json');
+            rapido.config.getPropertySourceFile('test1.file').getAbsolutePath().should.equal(path.join(__dirname, 'resources/rapido-test.json'));
+
+            rapido.config.getPropertySourceFile('test2.file').getAbsolutePath().should.equal(path.join(__dirname, 'resources/rapido-test.json'));
+            rapido.config.getPropertySourceFile("test.stack1.file").getAbsolutePath().should.equal(path.join(__dirname, 'resources/stack1/rapido-test.json'));
             
         })
     })
