@@ -26,8 +26,11 @@
         "use": {
             "description": "Enables and disables stacks",
             "file": "commands/command-use.js"
-        }
-        ,
+        },
+        "set": {
+            "description": "Sets a property in a project's JSON configuration file",
+            "file": "commands/command-set.js"
+        },
         "_default": {
             "description": "Default command when $0 is invoked with no arguments",
             "file": "commands/command-default.js"
