@@ -8,15 +8,21 @@ chai.Assertion.includeStack = true; // defaults to false
 
 describe('config-loader', function(){
     describe('#loadConfig()', function(){
-        xit('should register all commands', function(){
+        it('should register all commands', function(){
             var rapido = require('../lib/rapido').create();
+
             var paths = [
                 path.join(__dirname, 'resources'),
                 path.join(__dirname, 'resources/stack1'),
                 path.join(__dirname, 'resources/stack2'),
             ];
 
-            rapido.load(paths, 'rapido-test.json');
+            
+            var config = {};
+            require('../lib/config-loader').loadConfig(config, paths, 'rapido-test.json', rapido, true);
+            rapido.config = config;
+
+
             console.log('\n' + rapido.commands.toString());
 
             var stacks = rapido.commands.getStacks();
@@ -60,9 +66,10 @@ describe('config-loader', function(){
                 path.join(__dirname, 'resources/stack1'),
                 path.join(__dirname, 'resources/stack2'),
             ];
-
-            rapido.load(paths, 'rapido-test.json');
-            // console.error(rapido.config);
+            
+            var config = {};
+            require('../lib/config-loader').loadConfig(config, paths, 'rapido-test.json', rapido, true);
+            rapido.config = config;
 
             rapido.config['test1.file'].getAbsolutePath().should.equal(path.join(__dirname, 'resources/test1.json'))
             rapido.config['test.dir'].getAbsolutePath().should.equal(path.join(__dirname, 'resources/stack1'))

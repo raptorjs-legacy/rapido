@@ -10,7 +10,7 @@
         {
             "cmd":
             [
-                "node_modules/.bin/mocha",
+                "${project_path}/node_modules/.bin/mocha",
                 "test/",
                 "--ignore-leaks"
             ],
