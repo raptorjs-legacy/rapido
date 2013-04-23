@@ -5,9 +5,16 @@ Rápido
 Rápido is an extensible command line interface that enables rapid development for any technology stack. 
 Rápido is written in JavaScript and is built on top of [Node.js](http://nodejs.org/) and [npm](https://npmjs.org/). 
 
-Rápido provides support for custom commands and stacks, scaffolding, command line argument parsing, 
-configuration loading, accepting user input and producing colorized output.
+# Features
+* Custom commands and stacks
+* Scaffolding
+* Command line argument parsing
+* Configuration loading
+* User input
+* Colorized output
+* Command-line auto-completion
 
+# Screenshot
 ![Screenshot](https://raw.github.com/raptorjs/rapido/master/screenshots/screenshot.png)
 
 
@@ -288,6 +295,17 @@ rapido.log.error('Some error message');
 rapido.log.error('error', 'Some error message'); // With label: [error] Some warning message
 rapido.log('Message with no color');
 ```
+## Command-line Auto-Completion
+Rápido provides support for auto-completion in a shell. Auto-completion allows the TAB character to be used
+to complete a command name or a command option. To enable this feature, the following command must
+be added to your shell initialization scripts (typically `~/.profile`) after installing Rápido globally.
+```
+complete -C rap rap
+```
+
+The above command will use the `rap` command itself to handle auto-completion. The `rap` script detects
+when it is being invoked in the context of auto-completion based on special environment variables
+that get set by the shell. For more info, please see [Bash: Programmable Completion Builtins](http://www.gnu.org/software/bash/manual/bash.html#Programmable-Completion-Builtins).
 
 # Custom Command Line Tools using Rápido
 Don't like the name `rap` or what to create your own custom command line tool
