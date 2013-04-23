@@ -295,7 +295,7 @@ rapido.log.error('Some error message');
 rapido.log.error('error', 'Some error message'); // With label: [error] Some warning message
 rapido.log('Message with no color');
 ```
-## Command-line Auto-Completion
+# Command-line Auto-Completion
 Rápido provides support for auto-completion in a shell. Auto-completion allows the TAB character to be used
 to complete a command name or a command option. To enable this feature, the following command must
 be added to your shell initialization scripts (typically `~/.profile`) after installing Rápido globally.
