@@ -19,7 +19,7 @@ describe('config-loader', function(){
 
             
             var config = {};
-            require('../lib/config-loader').loadConfig(config, paths, 'rapido-test.json', rapido, true);
+            require('../lib/config-loader').loadStackConfigs(config, paths, 'rapido-test.json', rapido);
             rapido.config = config;
 
 
@@ -68,7 +68,7 @@ describe('config-loader', function(){
             ];
             
             var config = {};
-            require('../lib/config-loader').loadConfig(config, paths, 'rapido-test.json', rapido, true);
+            require('../lib/config-loader').loadStackConfigs(config, paths, 'rapido-test.json', rapido);
             rapido.config = config;
 
             rapido.config['test1.file'].getAbsolutePath().should.equal(path.join(__dirname, 'resources/test1.json'))

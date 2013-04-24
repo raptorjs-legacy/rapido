@@ -1,28 +1,28 @@
 {
+	"build_systems":
+	[
+		{
+			"cmd":
+			[
+				"${project_path}/node_modules/.bin/mocha",
+				"test/",
+				"--ignore-leaks"
+			],
+			"name": "test",
+			"working_dir": "${project_path}"
+		}
+	],
 	"folders":
 	[
 		{
 			"path": "."
 		}
 	],
-    "build_systems":
-    [
-        {
-            "cmd":
-            [
-                "${project_path}/node_modules/.bin/mocha",
-                "test/",
-                "--ignore-leaks"
-            ],
-            "name": "test",
-            "working_dir": "${project_path}"
-        }
-    ],
-    "settings":
-    {
-        "build_switcher_systems":
-        [
-            "test"
-        ]
-    }
+	"settings":
+	{
+		"build_switcher_systems":
+		[
+			"test"
+		]
+	}
 }

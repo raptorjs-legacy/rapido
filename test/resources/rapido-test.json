@@ -2,6 +2,8 @@
     "test1.file": "test1.json",
     "test2.file": "default.json",
     "test.dir": "stack1",
+    "name": "default",
+    "description": "default commands",
     "commands": {
         "command1": {
             "description": "Description for command1",

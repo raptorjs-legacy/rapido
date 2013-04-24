@@ -1,7 +1,8 @@
 {
     "scaffold.command.dir": "scaffolds/command",
     "scaffold.stack.dir": "scaffolds/stack",
-
+    "name": "default",
+    "description": "Default commands",
     "commands": {
         "create command": {
             "description": "Creates a new rapido command",
