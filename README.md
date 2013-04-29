@@ -60,7 +60,7 @@ Stacks can also be installed globally using the `--global` switch for `npm`
 will search for Rápido stacks and commands in all of the first-level Node modules found in any of the available 
 `node_modules` directories. Rápido uses the same module search path that Node uses and will begin its
 search in the current working directory and ending in the global `node_modules` direcotry.
-A Rápido stack is indicated by the existence of a `rapido.json` configuration
+A Rápido stack is indicated by the existence of a `rapido-stack.json` configuration
 file in the root directory of the module.
 
 ### Enabling Stacks
@@ -121,7 +121,7 @@ overrides at the directory/project-level and at the user or system level using a
 
 Rápido will look for a `rapido.json` file in the current working directory, and then search in the parent directory,
 all the way up to the root. It will then search in the home directory. Lastly, Rápido will search
-for `rapido.json` files in all of the `node_modules` directories using the same search
+for `rapido-stack.json` files in all of the `node_modules` directories using the same search
 path that Node uses to find and load modules (starting in the current working directory).
 
 # Creating a Stack
@@ -132,28 +132,25 @@ $ cd my-stack
 $ rap create stack
 ```
 You will be prompted for information about the new stack, and the command then will generate all of the files
-for your stack in the current directory. Stacks are defined in a `rapido.json` file as shown in the following
+for your stack in the current directory. Stacks are defined in a `rapido-stack.json` file as shown in the following
 sample code:
 ```javascript
 {
-    "stacks": {
-        "raptorjs": {
-            "description": "Commands for the RaptorJS Toolkit",
-            "commands": {
-                "create component": {
-                    "description": "Create a RaptorJS UI component",
-                    "file": "command-create-component.js"
-                },
-                "create page": {
-                    "description": "Create a RaptorJS page",
-                    "file": "command-create-page.js"
-                },
-                "rename component": {
-                    "description": "Rename an existing UI component",
-                    "file": "command-rename-component.js"
-                }
-            }
-        } 
+    "name": "raptorjs",
+    "description": "Commands for the RaptorJS Toolkit",
+    "commands": {
+        "create component": {
+            "description": "Create a RaptorJS UI component",
+            "file": "command-create-component.js"
+        },
+        "create page": {
+            "description": "Create a RaptorJS page",
+            "file": "command-create-page.js"
+        },
+        "rename component": {
+            "description": "Rename an existing UI component",
+            "file": "command-rename-component.js"
+        }
     }
 }
 ```
@@ -163,7 +160,7 @@ You can then share your stack by publishing it to the npm repository by simply r
 # Creating a Command
 New commands can be added to a stack using the `rap create command`. You will be prompted for
 some information about the command, and then the command implementation will be created
-and automatically registered in the stack by updating the `rapido.json` for the stack.
+and automatically registered in the stack by updating the `rapido-stack.json` for the stack.
 
 A command handler is implemented as a CommonJS module as shown in the following sample code:
 ```javascript
