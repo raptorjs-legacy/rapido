@@ -1,0 +1,10 @@
+{
+    "name": "{name}",
+    "description": "{description}",
+    "commands": {
+        "say hello": {
+            "description": "Say hello!",
+            "file": "commands/say-hello.js"
+        }
+    } 
+}
