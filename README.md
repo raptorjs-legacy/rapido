@@ -224,7 +224,9 @@ module.exports = {
 ## Scaffolding
 Rápido provides support for scaffolding which allows for commands to generate a set of files
 from a template directory. Rápido uses [dust-linkedin](http://linkedin.github.com/dustjs/) to
-support variables, conditionals and other structural logic inside template files. In addition,
+support variables, conditionals and other structural logic inside template files. Only files with
+the ".dust" extension will be treated as Dust templates and other files will be copied directly
+to the output directory. In addition,
 variables are supported in filenames using `_<var-name>_` syntax. If a variable inside a filename
 resolves to a `false` value then the file will be ignored, thus allowing for conditional files.
 
