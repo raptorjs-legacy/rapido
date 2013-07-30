@@ -11,21 +11,26 @@ describe('config-loader', function(){
         it('should register all commands', function(){
             var rapido = require('../lib/rapido').create();
 
-            var paths = [
+            rapido.stackDirs = [
                 path.join(__dirname, 'resources'),
                 path.join(__dirname, 'resources/stack1'),
                 path.join(__dirname, 'resources/stack2'),
             ];
+            rapido.stackConfigFilename = 'rapido-test.json';
+
+            rapido.init();
 
             
-            var config = {};
-            require('../lib/config-loader').loadStackConfigs(config, paths, 'rapido-test.json', rapido);
-            rapido.config = config;
+            // var config = {};
+            // require('../lib/config-loader').loadStackConfigs(config, paths, 'rapido-test.json', rapido);
+            // rapido.config = config;
 
 
             console.log('\n' + rapido.commands.toString());
 
             var stacks = rapido.commands.getStacks();
+
+
             stacks.should.have.length(3);
             stacks[0].name.should.equal('default');
             stacks[0].description.should.be.a('string');
