@@ -1,6 +1,6 @@
 {
   "name": "rapido",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "description": "Rápido is an extensible command line interface that enables rapid development for any technology stack. Rápido is written in JavaScript and is built on top of Node.js and npm.",
   "main": "lib/rapido.js",
   "scripts": {
