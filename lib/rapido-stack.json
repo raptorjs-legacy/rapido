@@ -32,9 +32,10 @@
             "description": "Sets a property in a project's JSON configuration file",
             "file": "commands/command-set.js"
         },
-        "_default": {
+        "default": {
             "description": "Default command when $0 is invoked with no arguments",
-            "file": "commands/command-default.js"
+            "file": "commands/command-default.js",
+            "listed": false
         }
     }
 
