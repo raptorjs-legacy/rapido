@@ -1,5 +1,5 @@
 module.exports = {
-    usage: 'Usage: $0 {commandName} <message>',
+    usage: 'Usage: $0 $commandName <message>',
 
     options: {
         'upper-case': {
