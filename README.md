@@ -80,7 +80,7 @@ NOTE: The currently enabled stacks are stored in the `rapido.json` configuration
 the current directory.
 
 ### Listing Commands and Stacks
-To get a list of available commands for the currently enabled stacks, simple run the following command:<br>
+To get a list of available commands for the currently enabled stacks, simply run the following command:<br>
 ```
 $ rap list
 ```
@@ -313,6 +313,9 @@ that utilizes the power or Rápido? No problem! Just add a Node bin script to pr
 var path = require('path');
 var rapido = require('rapido').create();
 
+// Want to use something other than "rapido.json"?
+rapido.configFilename = "raptor.json";
+
 // Give your command line tool a name:
 rapido.title = 'RaptorJS Command Line Tools';
 
@@ -322,6 +325,17 @@ rapido.addNodeModulesDir(path.join(__dirname, '../node_modules'));
 
 // Enable any stacks you need for your Command Line Tool
 rapido.enableStack('raptorjs');
+
+// Add a specific directory that contains a Rápido stack
+rapido.addStackDir(path.join(__dirname, '..'));
+
+// Multiple stacks with the same command names? Make one of the stacks
+// exclusive to avoid ambigous commands
+rapido.exclusiveStackCommands('raptorjs');
+
+// Don't want to list a command in one of the enabled stacks?
+// Then hide it:
+rapido.hideCommand('another-stack', 'useless command');
 
 // Now run Rápido and let it take care of the rest!
 rapido.run(process.argv);
