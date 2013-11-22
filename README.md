@@ -54,7 +54,7 @@ $ npm install rapido-raptorjs
 ```
 
 Stacks can also be installed globally using the `--global` switch for `npm` 
-(e.g. `npm install rapido-raptorjs --global`). When launched Rápido
+(e.g. `npm install rapido-raptorjs --global`). When launched, Rápido
 will search for Rápido stacks and commands in all of the first-level Node modules found in any of the available 
 `node_modules` directories. Rápido uses the same module search path that Node uses and will begin its
 search in the current working directory and ending in the global `node_modules` direcotry.
