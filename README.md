@@ -1,5 +1,3 @@
-_Design In-Progress. Feedback and Contributions Welcome_
-
 Rápido
 ======
 Rápido is an extensible command line interface that enables rapid development for any technology stack. 
