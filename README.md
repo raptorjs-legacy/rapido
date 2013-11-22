@@ -40,7 +40,7 @@ $ rap create component ui/buttons/Button --no-testing
 In the above example, `"create component"` is the command name and `"ui/buttons/Button"` and `"--no-testing"` are additional
 arguments to the command handler.
 
-NOTE: Rápido uses `rap` for less typing.
+NOTE: Rápido uses `rap` by default, but you can change it to whatever you want. See [Custom Command Line Tools using Rápido](#custom-command-line-tools-using-r%C3%A1pido)
 
 Details on creating your own commands are described in the "Creating Custom Commands" section below.
 
