@@ -5,6 +5,8 @@
         "require"
     ],
 
+    "strict": false,
+    "globalstrict": true,
     "node" : true,
     "es5" : false,
     "browser" : true,
@@ -30,6 +32,7 @@
     "white": false,
     "eqeqeq": false,
     "latedef": true,
+    "unused": "vars",
 
     /* Relaxing options: */
     "eqnull": true,
